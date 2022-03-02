@@ -23,7 +23,8 @@ const others=values=>{
 
 //validity check
 const validItem=item=>{
-    if(item==undefined)
+  
+    if(item==undefined || item==null || item=='')
     {
         return 'no data found'
     }
@@ -40,9 +41,9 @@ const detailsection=document.getElementById('detail-item');
     const div=document.createElement('div');
     detailsection.textContent='';
     document.getElementById('spinner').setAttribute("class", "d-flex justify-content-center d-block");
-    div.innerHTML=`<div class=" row card" >
+    div.innerHTML=`<div class="card" >
    <div class="d-flex justify-content-center"> <img src="${item.data.image}" class="card-img-top img-fluid d-flex  h-50 w-50" alt="..."></div>
-    <div class="card-body col-10 col-lg-6 w-100">
+    <div class="card-body  ">
       
         <h3 class="card-title">${validItem(item.data.name)}</h3>
         

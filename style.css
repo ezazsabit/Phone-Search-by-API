@@ -1,7 +1,7 @@
 .body{
     background-color: rgba(243, 215, 124, 0.431);
 }
-h1,.searchArea{
+h1,.motto,.searchArea{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -9,8 +9,8 @@ h1,.searchArea{
 }
 
 #searchInput{
-    padding-left: 40px;
-    padding-right:40px ;
+    /* padding-left: 20px;
+    padding-right:20px ; */
     border-radius: 10px;
    
 
