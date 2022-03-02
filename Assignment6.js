@@ -69,6 +69,7 @@ const detailsection=document.getElementById('detail-item');
 //--------- functon for showing the product in cards-
 const showCards=items=>{
     // console.log(item)
+    
     if(items.length===0)
     {
         
@@ -84,7 +85,7 @@ const showCards=items=>{
     }
     else{
     document.getElementById('cardsItem').textContent='';
-   
+    
     for(const item of items.slice(0,20))
     {
         
@@ -115,6 +116,11 @@ const showCards=items=>{
         .then(response=>response.json())
         .then(details=>showDetail(details)) 
       })
+    }
+    if(items.length>20)
+    {
+        
+        document.getElementById('see-more').setAttribute('class','d-flex justify-content-end d-block')
     }}
 }
 //scroll to the top
@@ -127,7 +133,7 @@ var scrollTop = function() {
  if(items.length>20)
  {
      
-     document.getElementById('see-more').setAttribute('class','d-flex justify-content-end')
+     //document.getElementById('see-more').setAttribute('class','d-flex justify-content-end')
  }
 }
 
@@ -139,7 +145,7 @@ var scrollTop = function() {
 document.getElementById('searchButton').addEventListener('click',function(){
     document.getElementById('detail-item').textContent='';
     document.getElementById('cardsItem').textContent='';
-
+    document.getElementById('see-more').setAttribute('class','d-flex justify-content-end d-none')
     document.getElementById('spinner').setAttribute("class", "d-flex justify-content-center d-block");
     const searchItem=(document.getElementById('searchInput').value.toLowerCase());//case sensitivity solve
     showOutout(searchItem);

@@ -32,3 +32,8 @@ div #searchButton{
 span{
     color: rgb(235, 57, 57);
 }
+#see-more{
+    margin: 40px;
+    color: brown;
+    font-size: 2rem;
+}
