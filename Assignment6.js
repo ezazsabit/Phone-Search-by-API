@@ -45,7 +45,7 @@ const detailsection=document.getElementById('detail-item');
    <div class="d-flex justify-content-center justify-content-center"> <img src="${item.data.image}" class="card-img-top img-fluid d-flex  h-50 w-50" alt="..."></div>
     <div class="card-body d-flex flex-column ">
       
-        <h3 class="card-title">${validItem(item.data.name)}</h3>
+        <h3 class="card-title d-flex justify-content-center">${validItem(item.data.name)}</h3>
         
      
         <ul class="list-group list-group-flush">
