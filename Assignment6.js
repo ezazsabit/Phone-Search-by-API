@@ -39,6 +39,7 @@ const validItem=item=>{
 const detailsection=document.getElementById('detail-item');
     const div=document.createElement('div');
     detailsection.textContent='';
+    document.getElementById('spinner').setAttribute("class", "d-flex justify-content-center d-block");
     div.innerHTML=`<div class=" row card" >
     <img src="${item.data.image}" class="card-img-top img-fluid col-10 col-lg-6 h-50 w-50" alt="...">
     <div class="card-body col-10 col-lg-6 w-100">
@@ -58,6 +59,7 @@ const detailsection=document.getElementById('detail-item');
 
     
   </div>`
+  document.getElementById('spinner').setAttribute("class", "d-none");
    detailsection.appendChild(div)  
  } 
 
@@ -71,13 +73,17 @@ const showCards=items=>{
         
         const Section=document.getElementById('cardsItem');
         document.getElementById('cardsItem').textContent='';
+        
         const div=document.createElement('div');
         div.innerHTML=`<h3>No item matched...</h3>`
         div.setAttribute("style", "display: flex; justify-content: center;");
+        document.getElementById('spinner').setAttribute("class", "d-none");
+
         Section.appendChild(div)
     }
     else{
     document.getElementById('cardsItem').textContent='';
+   
     for(const item of items.slice(0,20))
     {
         
@@ -97,6 +103,8 @@ const showCards=items=>{
           
         </div>
       </div>`;
+      document.getElementById('spinner').setAttribute("class", "d-none");
+
       Section.appendChild(div)
       document.getElementById(`${item.slug}`).addEventListener('click',function(){
           scrollTop();
@@ -121,6 +129,9 @@ var scrollTop = function() {
 //----main operation
 document.getElementById('searchButton').addEventListener('click',function(){
     document.getElementById('detail-item').textContent='';
+    document.getElementById('cardsItem').textContent='';
+
+    document.getElementById('spinner').setAttribute("class", "d-flex justify-content-center d-block");
     const searchItem=(document.getElementById('searchInput').value.toLowerCase());//case sensitivity solve
     showOutout(searchItem);
     document.getElementById('searchInput').value='';
