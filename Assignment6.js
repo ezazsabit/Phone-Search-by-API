@@ -107,6 +107,7 @@ const showCards=items=>{
       document.getElementById('spinner').setAttribute("class", "d-none");
 
       Section.appendChild(div)
+     
       document.getElementById(`${item.slug}`).addEventListener('click',function(){
           scrollTop();
          
@@ -121,7 +122,14 @@ var scrollTop = function() {
     window.scrollTo(0, 0);
 };
 
-
+ //see more option
+ const seeMOre=items=>{
+ if(items.length>20)
+ {
+     
+     document.getElementById('see-more').setAttribute('class','d-flex justify-content-end')
+ }
+}
 
 
 
