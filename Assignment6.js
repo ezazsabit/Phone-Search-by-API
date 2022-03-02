@@ -41,21 +41,21 @@ const detailsection=document.getElementById('detail-item');
     const div=document.createElement('div');
     detailsection.textContent='';
     document.getElementById('spinner').setAttribute("class", "d-flex justify-content-center d-block");
-    div.innerHTML=`<div class="card" >
-   <div class="d-flex justify-content-center"> <img src="${item.data.image}" class="card-img-top img-fluid d-flex  h-50 w-50" alt="..."></div>
-    <div class="card-body  ">
+    div.innerHTML=`<div class="card container " >
+   <div class="d-flex justify-content-center justify-content-center"> <img src="${item.data.image}" class="card-img-top img-fluid d-flex  h-50 w-50" alt="..."></div>
+    <div class="card-body d-flex flex-column ">
       
         <h3 class="card-title">${validItem(item.data.name)}</h3>
         
      
-      <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush">
         <li class="list-group-item"><h5>Realease date :</h5> ${validItem(item.data.releaseDate)}</li>
         <li class="list-group-item"><h5>Sensors:</h5> ${validItem(item.data.mainFeatures.sensors.join(','))}</li>
         
         <li class="list-group-item"><h5>Others: </h5>${others(item.data.others)
         }</li>
         
-      </ul>
+        </ul>
     </div>
 
     
